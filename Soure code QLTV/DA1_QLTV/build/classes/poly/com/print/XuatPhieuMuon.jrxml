@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="600" pageHeight="300" orientation="Landscape" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c75bf3d-86e1-4118-afef-692cf5337f4f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MaPhieuMuon" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     PhieuMuon."MaPhieuMuon" AS PhieuMuon_MaPhieuMuon,
+     PhieuMuon."SoLuong" AS PhieuMuon_SoLuong,
+     PhieuMuon."NgayMuon" AS PhieuMuon_NgayMuon,
+     PhieuMuon."NgayHenTra" AS PhieuMuon_NgayHenTra,
+     Sach."TenSach" AS Sach_TenSach,
+     SinhVien."HoTen" AS SinhVien_HoTen,
+     SinhVien."SDT" AS SinhVien_SDT,
+     TheLoaiSach."TenTheLoai" AS TheLoaiSach_TenTheLoai,
+     PhieuMuon."MaSV" AS PhieuMuon_MaSV
+FROM
+     "dbo"."Sach" Sach INNER JOIN "dbo"."PhieuMuon" PhieuMuon ON Sach."MaSach" = PhieuMuon."MaSach"
+     INNER JOIN "dbo"."SinhVien" SinhVien ON PhieuMuon."MaSV" = SinhVien."MaSV"
+     INNER JOIN "dbo"."TheLoaiSach" TheLoaiSach ON Sach."MaTheLoai" = TheLoaiSach."MaTheLoai"
+WHERE
+     PhieuMuon."MaPhieuMuon" = $P{MaPhieuMuon}]]>
+	</queryString>
+	<field name="PhieuMuon_MaPhieuMuon" class="java.lang.Integer"/>
+	<field name="PhieuMuon_SoLuong" class="java.lang.Integer"/>
+	<field name="PhieuMuon_NgayMuon" class="java.lang.String"/>
+	<field name="PhieuMuon_NgayHenTra" class="java.lang.String"/>
+	<field name="Sach_TenSach" class="java.lang.String"/>
+	<field name="SinhVien_HoTen" class="java.lang.String"/>
+	<field name="SinhVien_SDT" class="java.lang.String"/>
+	<field name="TheLoaiSach_TenTheLoai" class="java.lang.String"/>
+	<field name="PhieuMuon_MaSV" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="580" height="52" forecolor="#0033CC" uuid="27bb6db6-ae4d-4903-b9d5-a3c5083d1a9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="40" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phiếu Mượn Sách]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-17" width="229" height="79" uuid="ba3d1cef-c65c-4e3e-b576-60a80182efa7"/>
+				<imageExpression><![CDATA["C:\\Users\\PC\\Documents\\NetBeansProjects\\DA1_QLTV\\src\\poly\\com\\image\\hinh.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="170" splitType="Stretch">
+			<staticText>
+				<reportElement x="38" y="52" width="91" height="20" uuid="c896c923-f9d5-41dd-982f-9f1e0e9a0b23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mã Sinh Viên: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="6" width="62" height="20" uuid="3e2db1fd-87f6-4fb0-b2fa-cfc91521cb7e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mã Phiếu: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="92" width="91" height="20" uuid="c304a711-09f0-4f50-818c-9dc2d01b4551"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tên Sinh Viên: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="129" width="35" height="20" uuid="de31193a-a165-4ad2-b5bf-b7f8d987c798"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SĐT: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="52" width="62" height="20" uuid="4ffc1e00-0c4a-480a-8a2e-756d7947364e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tên Sách: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="92" width="62" height="20" uuid="18073837-368b-497d-a297-038822ee5775"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Số Lượng:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="129" width="85" height="20" uuid="41950cb3-e94e-4836-a72b-ba96b4a463ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ngày hẹn trả: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="6" width="75" height="20" uuid="13dac3da-e04f-4461-a55b-a071967d4bd1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ngày mượn:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="6" width="100" height="20" uuid="4c737a84-6aa3-4ebe-b2f9-97e24c29a6f8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PhieuMuon_MaPhieuMuon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="52" width="100" height="20" uuid="ed359e9f-230f-4450-8111-853a14e3de3e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PhieuMuon_MaSV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="92" width="100" height="20" uuid="45931a7e-d627-4906-b523-9e87af508009"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SinhVien_HoTen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="129" width="100" height="20" uuid="4b3e1620-a888-4536-b433-0f21e257815e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SinhVien_SDT}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="365" y="6" width="100" height="20" uuid="2c4b9ba2-94b3-4011-a187-6694253753dd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PhieuMuon_NgayMuon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="52" width="100" height="20" uuid="fd32705d-e03d-4528-b002-701875ed3acd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sach_TenSach}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="92" width="100" height="20" uuid="8f3c4899-5798-48ce-b002-99475b2b2a11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PhieuMuon_SoLuong}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="375" y="129" width="100" height="20" uuid="30b20f01-e651-4f14-8bed-a8fffa39f39c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PhieuMuon_NgayHenTra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

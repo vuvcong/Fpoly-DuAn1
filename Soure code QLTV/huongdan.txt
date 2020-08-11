@@ -1,0 +1,9 @@
+﻿1. Đầu tiên chạy file sql để tạo database
+
+2. Mở Netbeans => Open Project => vào class ConnectDao trong poly.com.dao => sửa username và password đúng với trên máy.
+
+3. Lưu ý: để sử dụng chức năng in thì cần lên mạng xem hướng dẫn Add Plugins Jasper Reports có sẵn trong folder lib. Và xem cách sử dụng nó trong netbeans.
+
+3. Cuối cùng chạy thôi.
+
+Chúc bạn thành công.

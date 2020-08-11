@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6cfe5c69-d261-4965-b89d-44b47f977171">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     TheLoaiSach."MaTheLoai" AS TheLoaiSach_MaTheLoai,
+     TheLoaiSach."TenTheLoai" AS TheLoaiSach_TenTheLoai,
+     TheLoaiSach."ViTri" AS TheLoaiSach_ViTri
+FROM
+     "dbo"."TheLoaiSach" TheLoaiSach]]>
+	</queryString>
+	<field name="TheLoaiSach_MaTheLoai" class="java.lang.String"/>
+	<field name="TheLoaiSach_TenTheLoai" class="java.lang.String"/>
+	<field name="TheLoaiSach_ViTri" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="69">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="-6" y="-15" width="146" height="79" uuid="89d85122-b241-4dc9-ab99-2e5c6e403b16"/>
+				<imageExpression><![CDATA["C:\\Users\\PC\\Documents\\NetBeansProjects\\DA1_QLTV\\src\\poly\\com\\image\\hinh.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="94" y="0" width="473" height="47" forecolor="#0033CC" backcolor="#FFFFFF" uuid="3a0179f1-7994-44c5-bf2c-24e8e91cb6fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DANH SÁCH THỂ LOẠI SÁCH]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="34" uuid="c91f57c5-8d2f-44b0-bd59-00be7dbaa1ea"/>
+				<staticText>
+					<reportElement x="0" y="0" width="45" height="34" uuid="7e2aa315-dc49-46cd-a049-9201fc517cea"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[STT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="45" y="0" width="148" height="34" uuid="1afc61f8-b169-485e-9b9f-aa9cd8b24107"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mã Thể Loại]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="193" y="0" width="256" height="34" uuid="53f67c8e-b1f7-4bd4-8225-89e084a2670e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tên Thể Loại]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="449" y="0" width="106" height="34" uuid="4dc564ab-b40d-46bd-96c2-ac2f8c6150d2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vị trí]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="34" uuid="3ea1d76d-ec93-4d58-a720-006bef7cc2cb"/>
+				<textField>
+					<reportElement x="0" y="0" width="45" height="34" uuid="61f81ed0-5a60-4369-9413-6d3145e1eee7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="45" y="0" width="148" height="34" uuid="7bdd124a-df50-400e-b50c-e86f744c0113"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TheLoaiSach_MaTheLoai}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="193" y="0" width="256" height="34" uuid="7817a760-c6f8-4abc-90b7-642463bed0e8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TheLoaiSach_TenTheLoai}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="449" y="0" width="106" height="34" uuid="b22491fb-68e1-460b-90fa-6daff26d14f8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TheLoaiSach_ViTri}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="0" y="34" width="555" height="1" uuid="5c3a896c-3e10-43f5-ac15-e91789551c1f"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

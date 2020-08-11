@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c002841-4ce8-4f01-aec7-50f746a4c571">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     Sach."MaSach" AS Sach_MaSach,
+     Sach."TenSach" AS Sach_TenSach,
+     Sach."MaTheLoai" AS Sach_MaTheLoai,
+     Sach."TacGia" AS Sach_TacGia,
+     Sach."SoLuong" AS Sach_SoLuong,
+     Sach."NXB" AS Sach_NXB,
+     Sach."NgayNhap" AS Sach_NgayNhap,
+     Sach."NDTT" AS Sach_NDTT,
+     Sach."Hinh" AS Sach_Hinh,
+     TheLoaiSach."TenTheLoai" AS TheLoaiSach_TenTheLoai
+FROM
+     "dbo"."TheLoaiSach" TheLoaiSach INNER JOIN "dbo"."Sach" Sach ON TheLoaiSach."MaTheLoai" = Sach."MaTheLoai"]]>
+	</queryString>
+	<field name="Sach_MaSach" class="java.lang.String"/>
+	<field name="Sach_TenSach" class="java.lang.String"/>
+	<field name="Sach_MaTheLoai" class="java.lang.String"/>
+	<field name="Sach_TacGia" class="java.lang.String"/>
+	<field name="Sach_SoLuong" class="java.lang.Integer"/>
+	<field name="Sach_NXB" class="java.lang.String"/>
+	<field name="Sach_NgayNhap" class="java.lang.String"/>
+	<field name="Sach_NDTT" class="java.lang.String"/>
+	<field name="Sach_Hinh" class="java.lang.String"/>
+	<field name="TheLoaiSach_TenTheLoai" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="38" y="-12" width="201" height="79" uuid="59d41d9b-a0c9-4cb1-82c4-3c3c5301cd7b"/>
+				<imageExpression><![CDATA["C:\\Users\\PC\\Documents\\NetBeansProjects\\DA1_QLTV\\src\\poly\\com\\image\\hinh.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="257" y="5" width="496" height="47" forecolor="#0033CC" backcolor="#FFFFFF" uuid="c69d2719-dae1-4735-832a-0814939afe27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DANH SÁCH QUYỂN SÁCH]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="802" height="34" uuid="dbc00e6d-24d6-4855-9caa-9733de0e99b7"/>
+				<staticText>
+					<reportElement x="0" y="0" width="38" height="34" uuid="d079e70f-a1f5-4e9a-a880-8a1c5a9c7915"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[STT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="0" width="54" height="34" uuid="e34e326f-7207-4a09-8bc4-567fdaf7f88f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mã Sách]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="92" y="0" width="138" height="34" uuid="b7314cfa-78d1-4b44-9645-12d142cc0eb0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tên Sách]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="305" y="0" width="115" height="34" uuid="8a914260-1bc1-4480-bb3d-80953705763b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tên Thể Loại]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="420" y="0" width="55" height="34" uuid="5de97076-bbba-4d04-ae43-a20d7682f78f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tác giả]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="474" y="0" width="53" height="34" uuid="e1ef3977-57e4-4d82-9465-305147c73ecc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Số lượng]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="527" y="0" width="58" height="34" uuid="cab42038-5874-4a9f-8874-b5b494636bb8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NXB]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="230" y="0" width="75" height="34" uuid="480a26d7-3f96-4867-a3cd-e82cd1268491"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mã Thể Loại]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="584" y="0" width="63" height="34" uuid="e6c55021-9146-4ab6-b037-c48a2acf8bab"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ngày nhập]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="647" y="0" width="107" height="34" uuid="92f59152-6341-4513-92b4-41e77d5123dd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nội dung]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="754" y="0" width="47" height="34" uuid="22b0a4c4-575f-4ec2-85d2-010f1e1a8492"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Hình]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="802" height="34" uuid="da4f9de8-be80-4970-b989-09f921ebb3ae"/>
+				<textField>
+					<reportElement x="0" y="0" width="38" height="34" uuid="5b7e42cf-eec3-4288-8086-d0e9f32d0473"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="38" y="0" width="54" height="34" uuid="79ddd2b6-7026-4e9f-82dc-db56deb84e25"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_MaSach}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="92" y="0" width="138" height="34" uuid="49d010b2-0593-4e4f-a90a-eb4628d3cc70"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_TenSach}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="305" y="0" width="115" height="34" uuid="6427698b-3d3b-4417-b0d0-01d68e4398d6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TheLoaiSach_TenTheLoai}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="420" y="0" width="55" height="34" uuid="2aff38f5-4397-4a6c-b0f5-f87dde3ad92b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_TacGia}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="475" y="0" width="52" height="34" uuid="6d2cb1df-39ed-428f-a724-aadf06a0ecf1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_SoLuong}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="754" y="0" width="48" height="34" uuid="e9f7b86f-6ac4-49d7-84b8-6d685fc29f0e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_Hinh}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="647" y="0" width="107" height="34" uuid="9b8dcb1e-ee2a-4a28-a989-72d8a588d158"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_NDTT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="230" y="0" width="75" height="34" uuid="92616ec6-eaf7-4107-b3cb-69319a34b0a7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_MaTheLoai}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="527" y="0" width="57" height="34" uuid="25ac72f7-834b-44c5-8399-0a9bdbaa2a10"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_NXB}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="584" y="0" width="63" height="34" uuid="e23f8fde-4cb8-4398-9e8a-ec02e36f6ea8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="13"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Sach_NgayNhap}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="1" y="35" width="802" height="1" uuid="a67bfed2-800a-47e4-b1ed-2f48843d78d9"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
